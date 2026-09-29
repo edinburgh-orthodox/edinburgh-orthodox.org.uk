@@ -1,0 +1,25 @@
+// Church blocks (Our Churches page)
+.church-block {
+  border-bottom: 1px solid $line;
+  padding: 0 0 20px;
+  margin-bottom: 20px;
+}
+.church-block:last-child {
+  border-bottom: 0;
+}
+.church-block h2,
+.church-block h3 {
+  margin: 0 0 2px;
+  font-size: 20px;
+}
+.church-block p {
+  margin: 8px 0;
+}
+.church-block a {
+  color: $crimson;
+  text-decoration: none;
+}
+.church-block a:hover {
+  text-decoration: underline;
+}
+

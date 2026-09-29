@@ -107,7 +107,7 @@ Here are the decisions already agreed, in plain terms.
 
 A working mockup of every redesigned page is live on GitHub Pages:
 
-**https://oliverbrotchie.github.io/edinburgh-orthodox.org.uk/mockups/**
+**https://edinburgh-orthodox.github.io/edinburgh-orthodox.org.uk/mockups/**
 
 It is plain HTML and CSS, so anyone can open it in a browser to see the layout. It is a
 visual reference, not the real website and not uploaded anywhere. A page-by-page summary of

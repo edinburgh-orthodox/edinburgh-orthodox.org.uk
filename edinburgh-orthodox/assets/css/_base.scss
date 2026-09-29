@@ -1,0 +1,66 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: $font-sans;
+  background: $paper;
+  color: $ink;
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+.wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+// All links: ink, no underline. Specific rules below override where needed.
+a {
+  color: $ink;
+  text-decoration: none;
+  cursor: pointer;
+}
+a:hover,
+a:visited {
+  color: $ink;
+  text-decoration: none;
+}
+
+// Links inside page content are underlined (distinct from nav/footer/buttons).
+.wrap a:not(.btn):not(.church):not(.item) {
+  text-decoration: underline;
+}
+
+// Heading links stay clean.
+.wrap h1 a,
+.wrap h2 a,
+.wrap h3 a {
+  text-decoration: none !important;
+}
+.wrap h1 a:hover,
+.wrap h2 a:hover,
+.wrap h3 a:hover {
+  text-decoration: none !important;
+}
+
+section {
+  margin: 40px 0;
+}
+
+h1,
+h2 {
+  font-family: $font-display;
+  font-size: 30px;
+  font-weight: 600;
+  letter-spacing: -0.5px;
+  margin: 0 0 16px;
+}
+
+h3 {
+  font-family: $font-display;
+  font-size: 20px;
+  font-weight: 600;
+}

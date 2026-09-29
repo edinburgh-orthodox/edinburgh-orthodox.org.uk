@@ -11,12 +11,12 @@
 
 <p align="center">
   <a
-    href="https://oliverbrotchie.github.io/edinburgh-orthodox.org.uk/mockups/"
+    href="https://edinburgh-orthodox.github.io/edinburgh-orthodox.org.uk/mockups/"
   >🎨 View the redesign mockup</a>
   &nbsp;·&nbsp;
   <a href="https://edinburgh-orthodox.org.uk" target="_blank">🌐 Current live site</a>
   &nbsp;·&nbsp;
-  <a href="https://github.com/OliverBrotchie/edinburgh-orthodox.org.uk/issues">🕯️ Issue tracker</a>
+  <a href="https://github.com/edinburgh-orthodox/edinburgh-orthodox.org.uk/issues">🕯️ Issue tracker</a>
 </p>
 
 <hr/>
@@ -66,7 +66,7 @@ A full, item-by-item list of how the redesign differs from the current site is i
 
 ## Start here
 
-1. 🎨 **[Open the mockup](https://oliverbrotchie.github.io/edinburgh-orthodox.org.uk/mockups/)** to see the intended look.
+1. 🎨 **[Open the mockup](https://edinburgh-orthodox.github.io/edinburgh-orthodox.org.uk/mockups/)** to see the intended look.
 2. 📜 Read [`proposal.md`](proposal.md) for the full plan.
 3. 🧾 Read [`docs/spec-website-redesign.md`](docs/spec-website-redesign.md) for the detail.
 

@@ -1,0 +1,18 @@
+{{/* Shared footer using the same configured menu as the header, followed by contact and charity details. */}}
+<footer class="site-foot">
+    <div class="foot-inner">
+        <div class="foot-links">
+            <a href="{{ "/" | relURL }}">Home</a>
+            {{ range site.Menus.main }}
+                <a href="{{ .URL }}"{{ if .Params.external }} target="_blank" rel="noopener"{{ end }}>{{ .Name }}</a>
+            {{ end }}
+        </div>
+
+        <p class="foot-contact">
+            Contact:
+            <a href="mailto:secretary@edinburgh-orthodox.org.uk">secretary@edinburgh-orthodox.org.uk</a>
+        </p>
+
+        <p>Orthodox Community of St Andrew, Edinburgh · Charity {{ site.Params.charityNumber }} · <a href="{{ "documents/constitution.pdf" | relURL }}" target="_blank" rel="noopener">Constitution</a></p>
+    </div>
+</footer>

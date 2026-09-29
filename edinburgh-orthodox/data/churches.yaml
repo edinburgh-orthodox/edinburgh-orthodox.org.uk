@@ -1,0 +1,24 @@
+- name: Meadow Lane
+  address: 2 Meadow Lane, Edinburgh, EH8 9NR
+  summary: Daily and smaller services.
+  description: >-
+    The original home of the community. A small chapel where the clergy live,
+    with a hall attached, used for daily and smaller services during the week.
+  mapURL: https://maps.app.goo.gl/hMKTXZ4TrXtDKy7i7
+
+- name: Chapel Street
+  address: 33 Chapel Street, Edinburgh, EH8 9AY
+  summary: Sundays and large feasts.
+  description: >-
+    The larger church, which hosts the busier services, Sundays, and great
+    feasts. It is being furnished gradually.
+  mapURL: https://maps.app.goo.gl/eDMtYfHLSKY1WELHA
+
+- name: Craigmillar Park
+  address: 2c Craigmillar Park, Edinburgh
+  summary: Our future main church.
+  description: >-
+    The newly purchased property being furnished to become our future main
+    church. It also hosts the Orthodox school and larger meals and social gatherings.
+  mapURL: https://maps.app.goo.gl/9iprxsTgRYDQYKj9A
+  websiteURL: https://saintandrewsorthodoxchurchschool.org.uk/

@@ -1,0 +1,25 @@
+{{/* FAQ page rendered as a collapsible list from data/faq.yaml. */}}
+{{ define "main" }}
+    <div class="wrap">
+        <section class="page-section">
+            <h1>{{ .Title }}</h1>
+            <p class="page-intro">{{ .Description }}</p>
+
+            <div class="faq">
+                {{ range hugo.Data.faq }}
+                    <details id="{{ .question | anchorize }}">
+                        <summary>{{ .question }}</summary>
+                        <div class="faq-answer">
+                            {{ .answer | markdownify }}
+                        </div>
+                    </details>
+                {{ end }}
+            </div>
+        </section>
+    </div>
+{{ end }}
+
+{{ define "scripts" }}
+    {{ $script := resources.Get "js/faq.js" | js.Build (dict "minify" true "targetPath" "js/faq.js") | fingerprint }}
+    <script type="module" src="{{ $script.RelPermalink }}" integrity="{{ $script.Data.Integrity }}"></script>
+{{ end }}
