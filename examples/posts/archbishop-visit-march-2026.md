@@ -4,13 +4,10 @@ From Friday 20 to Sunday 22 March 2026, His Eminence Archbishop Nikitas of Thyat
 
 On the Saturday, the clergy serving Scotland and the north of England gathered in Edinburgh for a Synaxis. The Archbishop sat with them to talk about the life of the parishes, the challenges we face, and the pastoral care of the region. He was joined by Bishop Raphael, who oversees our area. That evening the Archbishop attended Vespers at Meadow Lane.
 
-On Sunday, the Fourth Sunday of the Fast and the Sunday of St John Climacus, the Archbishop presided at Matins and celebrated the Divine Liturgy at Chapel Street. The church was full, with people of all ages and from many different backgrounds. During the service three milestones were marked. Daniel Nicholls was ordained to the rank of Reader. Fr Caius Gurgu was elevated to the rank of Oeconomos. Archimandrite Antonios Kakalis was appointed as a confessor.
+On Sunday, the Fourth Sunday of the Fast and the Sunday of St John Climacus, the Archbishop presided at Matins and celebrated the Divine Liturgy at Chapel Street. The church was full, with people of all ages and from many different backgrounds. During the service three milestones were marked. Daniel Nicholls was ordained to the rank of Reader. Fr Caius Gurgu was elevated to the rank of Oeconomos. The Very Reverend Archimandrite of the Ecumenical Throne Antonios Kakalis was appointed as a confessor.
 
 At the end of the Liturgy, a Doxology was offered for the Feast of the Annunciation and for Greek Independence Day. Mrs Melpomeni Papaioannou Plevri, the Honorary Consul of Greece in Edinburgh, gave the address for the day.
 
-The Archbishop then joined the community for a meal at Craigmillar Park Church Hall, where he had time to talk with parishioners and share in the life of the community.
+The Archbishop then joined the community for a meal at Craigmillar Park Church Hall, where he had time to talk with parishioners and share in the life of the community. That evening he presided at the Vespers of Compunction at Chapel Street.
 
-Photographs from the visit can be seen on the Archdiocese of Thyateira and Orthodox Times websites:
-
-- Archdiocese of Thyateira photo gallery: https://www.thyateira.org.uk/news/events/pastoral-visit-of-archbishop-nikitas-to-scotland/
-- Orthodox Times article and photos: https://orthodoxtimes.com/pastoral-visit-of-archbishop-of-thyateira-to-scotland/
+[Images to add: photographs from the Archdiocese of Thyateira gallery at https://www.thyateira.org.uk/news/events/pastoral-visit-of-archbishop-nikitas-to-scotland/ and from the Orthodox Times article at https://orthodoxtimes.com/pastoral-visit-of-archbishop-of-thyateira-to-scotland/.]
