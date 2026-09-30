@@ -1,0 +1,89 @@
+baseURL = "https://edinburgh-orthodox.org.uk/"
+locale = "en-GB"
+title = "St Andrew's Orthodox Church"
+disableKinds = ["taxonomy", "term"]
+enableRobotsTXT = true
+
+[params]
+  description = "Orthodox Community of St Andrew, Edinburgh"
+  charityNumber = "SC054378"
+
+[permalinks]
+  news = "/news/:contentbasename/"
+
+[[menus.main]]
+  name = "Our Churches"
+  pageRef = "/churches"
+  weight = 10
+  [menus.main.params]
+    primary = true
+
+[[menus.main]]
+  name = "Donate"
+  pageRef = "/donations"
+  weight = 20
+  [menus.main.params]
+    primary = true
+
+[[menus.main]]
+  name = "Clergy"
+  pageRef = "/clergy"
+  weight = 40
+  [menus.main.params]
+    primary = true
+
+[[menus.main]]
+  name = "News"
+  pageRef = "/news"
+  weight = 50
+  [menus.main.params]
+    primary = true
+
+[[menus.main]]
+  name = "FAQ"
+  pageRef = "/faq"
+  weight = 60
+  [menus.main.params]
+    primary = true
+
+[[menus.main]]
+  name = "Contact"
+  pageRef = "/contact"
+  weight = 65
+  [menus.main.params]
+    primary = true
+
+[[menus.main]]
+  name = "Catechesis"
+  pageRef = "#"
+  weight = 66
+
+# TODO: Create content/confessions.md, then replace this placeholder URL with pageRef.
+[[menus.main]]
+  name = "Confessions"
+  url = "#"
+  weight = 70
+
+# TODO: Create content/magazine.md, then replace this placeholder URL with pageRef.
+[[menus.main]]
+  name = "Magazine"
+  url = "#"
+  weight = 80
+
+# TODO: Create content/history.md, then replace this URL with pageRef.
+[[menus.main]]
+  name = "History"
+  url = "#"
+  weight = 90
+
+[[menus.main]]
+  name = "Orthodox School"
+  url = "https://saintandrewsorthodoxchurchschool.org.uk/"
+  weight = 100
+  [menus.main.params]
+    external = true
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = false

@@ -1,0 +1,35 @@
+{{/* Shared site header. Primary and drawer links come from menus.main in hugo.toml. */}}
+{{ $primaryLinks := where site.Menus.main "Params.primary" true }}
+<header class="site-head">
+    <div class="inner">
+        <a class="brand" href="{{ "/" | relURL }}">
+            <img src="{{ "images/red-logo-church.jpg" | relURL }}" alt="St Andrew's Orthodox Church logo">
+            St Andrew's Orthodox Church
+        </a>
+
+        <div class="nav-area">
+            <nav class="site-nav" aria-label="Main navigation">
+                <ul class="nav-row">
+                    {{ range $primaryLinks }}
+                        <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+                    {{ end }}
+                </ul>
+
+                <button class="nav-toggle" aria-label="More links" aria-expanded="false" type="button">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <ul class="more-menu">
+                    <li><button class="drawer-close" aria-label="Close menu" type="button">&times;</button></li>
+                    {{ range site.Menus.main }}
+                        <li{{ if .Params.primary }} data-dupe="1"{{ end }}>
+                            <a href="{{ .URL }}"{{ if .Params.external }} target="_blank" rel="noopener"{{ end }}>{{ .Name }}</a>
+                        </li>
+                    {{ end }}
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>

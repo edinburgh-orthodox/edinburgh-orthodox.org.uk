@@ -1,0 +1,13 @@
+{{/* News section page at /news/, listing all published posts newest first. */}}
+{{ define "main" }}
+    <div class="wrap">
+        <section class="page-section">
+            <h1>{{ .Title }}</h1>
+            {{ with .Description }}<p class="page-intro">{{ . }}</p>{{ end }}
+
+            <div class="page-col">
+                {{ partial "news-list.html" .Pages.ByDate.Reverse }}
+            </div>
+        </section>
+    </div>
+{{ end }}
