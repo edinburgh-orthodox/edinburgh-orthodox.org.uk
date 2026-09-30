@@ -2,41 +2,74 @@
 
 ## Repo purpose
 
-This repo is a project proposal and action-ticket board for fixing and updating the live
-WordPress website **https://edinburgh-orthodox.org.uk**. It contains no site code. The
-site runs on WordPress.com. Tickets describe *what to change and why*; the actual change is
-made in the WordPress admin, not in this repo.
+This repo holds the website of the Orthodox Community of St Andrew, Edinburgh, plus the
+plans and tickets for it. The site is a static Hugo build in `edinburgh-orthodox/`. The
+plans are the proposal, the spec, the tickets, and the visual mockups at the repo root.
 
-## The website (verified 2026-09-01)
+The site used to run on WordPress.com. It is being retired: the Hugo site is live on GitHub
+Pages now, and the WordPress subscription should stop once the domain points here (see issues
+#32 and #9). Do not plan new work in the WordPress admin.
 
-- **Host:** WordPress.com (site id `191368015`, Automattic CDN, `edinburghorthodox.wordpress.com`).
-  Domain is mapped; not self-hosted. No repo access to plugins/theme. Changes go through wp-admin or the WordPress.com REST API.
-- **Theme/fonts:** Raleway webfont (Jetpack custom fonts); standard WordPress.com theme; Jetpack active.
-- **Content (from sitemap.xml):** pages `services`, `clergy`, `confessions`, `finding-us`,
-  `donations`, `newsletter`, `programme`, `bookshop`, `catechetical-classes`, `other-communities`,
-  `latest-news`; blog posts under `/YYYY/MM/DD/`.
+## The website
+
+- **Engine:** Hugo (extended), pinned to version `0.165.0` in `.github/workflows/`. Source
+  lives in `edinburgh-orthodox/`.
+- **Build:** `hugo --source edinburgh-orthodox --minify`
+- **Preview:** `hugo server --source edinburgh-orthodox`, then http://localhost:1313/
+- **Deploy:** a merge into `main` publishes the site. `.github/workflows/pages.yml` builds it
+  and deploys the artifact to GitHub Pages at
+  https://edinburgh-orthodox.github.io/edinburgh-orthodox.org.uk/ .
+  `.github/workflows/hugo.yml` builds every pull request.
+- **Rules on `main`:** pull requests only, squash merges only, one approval, no self-approval.
+  Repository admins can bypass the review rule when there is no other reviewer.
+- **Production domain:** https://edinburgh-orthodox.org.uk (registration and DNS move are
+  tracked in issue #9).
 - **Identity:** Orthodox Community of St Andrew, Edinburgh; Archdiocese of Thyateira and Great
   Britain; charity **SC054378**.
-- **External integrations:** Mailchimp (membership/contact form), Square (donations link).
+- **External integrations:** Square (donations and the wishlist), Mailchimp (newsletter and
+  contact form), Google Calendar (where the schedule is meant to live; the homepage does not
+  read it yet).
+
+## Where things live in the Hugo site
+
+- `edinburgh-orthodox/content/` - one Markdown file per page, front matter in TOML (`+++`).
+  A page with `layout = "..."` uses the matching template in `layouts/`.
+- `edinburgh-orthodox/content/news/` - news posts, one file or page bundle each.
+  `draft = true` keeps a post out of the published build.
+- `edinburgh-orthodox/data/` - the structured content: `services.yaml`, `announcements.yaml`,
+  `churches.yaml`, `wishlist.yaml`, `faq.yaml`.
+- `edinburgh-orthodox/layouts/` - templates, including the header, footer, and news list
+  partials.
+- `edinburgh-orthodox/assets/css/` - SCSS partials, imported by `main.scss`. The design
+  follows the mockups in `mockups/` at the repo root.
+- `hugo.toml` - site title, parameters, permalinks, and the navigation menu. Navigation links
+  are defined once, in `menus.main`; a link with no page yet points at `#` and carries a TODO.
 
 ## Facts an agent needs that the site config won't tell it
 
-- Updates are proposals, not deployments. Mark an issue **blocked** until the site owner applies it.
-- The site is public read-only to agents - inspect it (sitemap, posts, pages), do not assume
-  write access.
-- Use the live site as ground truth; the static sitemap and `robots.txt` are the cheapest
-  snapshot of site structure.
+- A merge into `main` is a deployment. There is no separate publish step and no undo for a
+  live page, so check the build before asking for a merge.
+- Hugo excludes `draft = true` pages from the production build, so unfinished content can sit
+  in `main` safely.
+- `lefthook.yml` runs `hugo --source edinburgh-orthodox --minify --cleanDestinationDir` before
+  every commit.
+- The site is public. Never commit personal data, and treat contact details and the charity
+  number as high risk.
+- Two places are knowingly unfinished: `data/services.yaml` holds a sample week and the
+  homepage still says the calendar is edited in Google Calendar, and `data/faq.yaml` waits on
+  the bishop's approval. Issues #1 and #32 cover finishing them.
 
 ## Priorities
 
-- Broken or outdated info (services times, clergy, donation details) before cosmetic or SEO polish.
+- Broken or outdated information (service times, clergy, donation details) before cosmetic or
+  SEO polish.
 - Any change touching charity identity, donation details, or contact info is high-risk. Be
   exact, and add a comment on the ticket noting it needs the site owner's confirmation.
 
 ## Writing style
 
-- The proposal, spec, `CONTEXT.md`, and ADRs are read by non-technical people who do the
-  work in the WordPress admin. Write them in plain, friendly English.
+- The proposal, spec, `CONTEXT.md`, and ADRs are read by non-technical people who edit the
+  site. Write them in plain, friendly English.
 - No em-dashes (use a comma, full stop, or "and"). No arrows like `→`. No jargon unless the
   person needs it, and explain it when you use it.
 
