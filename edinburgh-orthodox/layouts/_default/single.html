@@ -1,0 +1,10 @@
+{{/* Fallback for ordinary Markdown pages such as FAQ, clergy, history, and confessions. */}}
+{{ define "main" }}
+    <article class="wrap content-page">
+        <header>
+            <h1>{{ .Title }}</h1>
+            {{ with .Description }}<p class="page-intro">{{ . }}</p>{{ end }}
+        </header>
+        <div class="page-content">{{ .Content }}</div>
+    </article>
+{{ end }}

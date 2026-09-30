@@ -1,0 +1,82 @@
+{{/* Donation, bookshop, and wishlist page. Loads donations.js through the scripts block below. */}}
+{{ define "main" }}
+    <div class="wrap">
+        <section class="page-section">
+            <h1>Donations</h1>
+            <p class="page-intro">The Edinburgh Orthodox Community of St Andrew depends for its future in Scotland on your support, with gifts of your prayer, time, talents, and money.</p>
+
+            <div class="page-col">
+                <p class="muted">Registered Scottish Charity, no. {{ site.Params.charityNumber }}.</p>
+                <p>Our community is maintained entirely by the generosity of its members and friends. Every gift helps us keep the church open, care for our clergy, and carry on our work in Edinburgh.</p>
+                <p class="muted">You can give by bank transfer or online, as a one-off or a regular standing order.</p>
+
+                <div class="btn-row">
+                    <a class="btn" href="https://square.link/u/XKyKhLtq" target="_blank" rel="noopener">Donate now</a>
+                    <button class="btn ghost" id="bank-toggle" type="button">Show bank details</button>
+                </div>
+
+                <div id="bank-details" class="bank-details" hidden>
+                    <table>
+                        <tbody>
+                            <tr><th>Scottish Charity Number</th><td>{{ site.Params.charityNumber }}</td></tr>
+                            <tr><th>Bank Account name</th><td>The Edinburgh Orth Community St Andrew</td></tr>
+                            <tr><th>Bank Account at</th><td>Bank of Scotland</td></tr>
+                            <tr><th>Sort Code</th><td>80-02-34</td></tr>
+                            <tr><th>Account Number</th><td>0070 6868</td></tr>
+                            <tr><th>IBAN</th><td>GB82BOFS80023400706868</td></tr>
+                            <tr><th>BIC</th><td>BOFSGB21222</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <section class="page-section">
+            <h2>Bookstore (honesty box)</h2>
+            <p class="page-intro">Choose your books, how many of each, and donate.</p>
+
+            <div class="page-col">
+                <div class="bookshop-fields">
+                    <label>Title<input class="title" id="bk-title" type="text" placeholder="Book title"></label>
+                    <label>Price (£)<input class="price" id="bk-price" type="number" min="0" step="0.01" inputmode="decimal" placeholder="0.00"></label>
+                    <label>Number<input class="qty" id="bk-qty" type="number" min="1" step="1" inputmode="numeric" value="1"></label>
+                    <button class="btn ghost bookshop-add" id="bk-add" type="button">Add</button>
+                </div>
+
+                <div class="rows" id="bk-rows" aria-live="polite"></div>
+
+                {{/* TODO: Connect the calculated bookstore total to a confirmed checkout process. */}}
+                <div class="bookshop-total">
+                    <span>Total: <strong id="bk-total">£0.00</strong></span>
+                    <span class="btn" role="link" aria-disabled="true" title="The donation link needs confirmation from the site owner">Donate this amount</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="page-section">
+            <h2>Wishlist</h2>
+            <p class="page-intro">Support the furnishing of our new church at Craigmillar Park. Pick one or more items, then donate the total in a single payment through Square.</p>
+
+            <div class="page-col">
+                {{ range hugo.Data.wishlist }}
+                    <label class="item">
+                        <input type="checkbox">
+                        <span class="name">{{ .name }}</span>
+                        <span class="price">£{{ .price }}</span>
+                    </label>
+                {{ end }}
+
+                {{/* TODO: Connect the selected items and total to a confirmed Square checkout URL. */}}
+                <div class="total-bar">
+                    <span>Selected: <strong id="wishlist-total">£0.00</strong></span>
+                    <span class="btn" role="link" aria-disabled="true" title="The donation link needs confirmation from the site owner">Donate selected items</span>
+                </div>
+            </div>
+        </section>
+    </div>
+{{ end }}
+
+{{ define "scripts" }}
+    {{ $script := resources.Get "js/donations.js" | js.Build (dict "minify" true "targetPath" "js/donations.js") | fingerprint }}
+    <script type="module" src="{{ $script.RelPermalink }}" integrity="{{ $script.Data.Integrity }}"></script>
+{{ end }}

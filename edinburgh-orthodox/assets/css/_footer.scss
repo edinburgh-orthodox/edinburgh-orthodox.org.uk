@@ -1,0 +1,30 @@
+// Footer
+.site-foot {
+  border-top: 1px solid $line;
+  padding: 32px 24px 40px;
+  color: $muted;
+  font-size: 14px;
+}
+.site-foot .foot-inner {
+  max-width: 860px;
+  margin: 0 auto;
+}
+.site-foot .foot-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  margin-bottom: 18px;
+}
+.site-foot a {
+  color: $crimson;
+  text-decoration: none;
+}
+.site-foot a:hover {
+  text-decoration: underline;
+}
+.site-foot .foot-contact {
+  margin-bottom: 6px;
+}
+.site-foot .foot-contact a {
+  color: $ink;
+}

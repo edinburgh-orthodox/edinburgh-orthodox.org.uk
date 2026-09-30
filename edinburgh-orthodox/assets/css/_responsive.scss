@@ -1,0 +1,43 @@
+@media (max-width: 560px) {
+  .brand {
+    font-size: 20px;
+    white-space: normal;
+    line-height: 1.15;
+    flex-shrink: 1;
+  }
+  .brand img {
+    height: 30px;
+  }
+  .cal-day {
+    flex-direction: column;
+    gap: 4px;
+  }
+  .intro p .dropcap {
+    font-size: 48px;
+    line-height: 0.8;
+  }
+  .bookshop-fields {
+    flex-wrap: wrap;
+  }
+  .bookshop-fields label {
+    flex: 1 1 100%;
+  }
+  .bookshop-fields label:nth-child(2),
+  .bookshop-fields label:nth-child(3) {
+    flex: 1 1 40%;
+  }
+  .bookshop-fields .bookshop-add {
+    flex: 1 1 100%;
+  }
+}
+@media (max-width: 919px) {
+  .nav-row {
+    display: none;
+  }
+  .more-menu {
+    min-width: 220px;
+  }
+  .more-menu li[data-dupe="1"] {
+    display: list-item;
+  }
+}

@@ -1,0 +1,71 @@
+// FAQ: collapsible question-and-answer list.
+.faq {
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.faq details {
+  background: #fff;
+  border: 1px solid $line;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.faq details:hover {
+  border-color: $crimson;
+}
+.faq summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 16px 18px;
+  cursor: pointer;
+  list-style: none;
+  font-family: $font-display;
+  font-size: 19px;
+  font-weight: 600;
+  color: $ink;
+}
+.faq summary::-webkit-details-marker {
+  display: none;
+}
+.faq summary::after {
+  content: "+";
+  flex-shrink: 0;
+  font-family: $font-sans;
+  font-size: 22px;
+  line-height: 1;
+  color: $crimson;
+  transition: transform 0.2s ease;
+}
+.faq summary:focus-visible {
+  outline: 2px solid $crimson;
+  outline-offset: 2px;
+}
+.faq details[open] {
+  border-color: $crimson;
+}
+.faq details[open] > summary {
+  color: $crimson;
+  border-bottom: 1px solid $line;
+}
+.faq details[open] > summary::after {
+  transform: rotate(45deg);
+}
+.faq-answer {
+  padding: 16px 18px 18px;
+  border-left: 3px solid $crimson;
+}
+.faq-answer p {
+  margin: 0 0 12px;
+}
+.faq-answer p:last-child {
+  margin-bottom: 0;
+}
+.faq-answer a {
+  color: $crimson;
+  text-decoration: underline;
+}

@@ -1,0 +1,81 @@
+{{/* Homepage using data/services.yaml, data/announcements.yaml, data/churches.yaml, and the three newest news posts. */}}
+{{ define "main" }}
+    {{ $services := hugo.Data.services }}
+    {{ $announcements := hugo.Data.announcements }}
+    {{ $churches := hugo.Data.churches }}
+
+    <div class="intro">
+        <div class="intro-logos">
+            <img class="flank" src="{{ "images/logo-thyateira.png" | relURL }}" alt="Archdiocese of Thyateira and Great Britain">
+            <img class="welcome-icon" src="{{ "images/st-andrew-icon.jpg" | relURL }}" alt="Icon of St Andrew">
+            <img class="flank" src="{{ "images/red-logo-church.jpg" | relURL }}" alt="St Andrew's Orthodox Church logo">
+        </div>
+        <div class="intro-overline">Ecumenical Patriarchate</div>
+        <div class="intro-overline">Archdiocese of Thyateira and Great Britain</div>
+        <p><span class="dropcap">W</span>elcome to <strong>St Andrew's Orthodox Church</strong>. All&nbsp;are&nbsp;welcome!</p>
+    </div>
+
+    <div class="wrap">
+        {{/* TODO: Replace sample service data with Google Calendar and implement the copy-this-week action. */}}
+        <section class="cal-section">
+            <h2>Weekly Services</h2>
+            <div class="cal-wrap">
+                <div class="cal">
+                    {{ range $services }}
+                        {{ $day := . }}
+                        <div class="cal-day">
+                            <div class="cal-date">
+                                {{ .date }}
+                                {{ with .note }}
+                                    <small>
+                                        {{ . }}
+                                        {{ with $day.mark }}<span class="mark {{ $day.markClass }}">{{ . }}</span>{{ end }}
+                                    </small>
+                                {{ end }}
+                            </div>
+                            <div class="cal-body">
+                                {{ range .services }}
+                                    <span class="svc">{{ .time }}<span class="loc">({{ .location }})</span></span>
+                                {{ end }}
+                            </div>
+                        </div>
+                    {{ end }}
+                </div>
+                <p class="muted">Edited in Google Calendar. A "copy this week" button produces the plain text to post to WhatsApp, Facebook, and email.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>Announcements</h2>
+            <div class="announce">{{ range $announcements }}<p>{{ . }}</p>{{ end }}</div>
+        </section>
+
+        <section>
+            <h2><a href="{{ "/churches/" | relURL }}">Our Churches</a></h2>
+            <div class="churches">
+                {{ range $churches }}
+                    <a class="church" href="{{ .mapURL }}" target="_blank" rel="noopener">
+                        <h3>{{ .name }}</h3>
+                        <p class="muted">{{ .address }}. {{ .summary }}</p>
+                        <p class="church-hint">Open in Google Maps</p>
+                    </a>
+                {{ end }}
+            </div>
+            <p><a href="{{ "/churches/" | relURL }}">See all our churches</a></p>
+        </section>
+
+        <section>
+            <h2><a href="{{ "/news/" | relURL }}">Recent news</a></h2>
+            {{ $news := where site.RegularPages "Section" "news" }}
+            {{ partial "news-list.html" (first 3 $news.ByDate.Reverse) }}
+            <p><a href="{{ "/news/" | relURL }}">All news</a></p>
+        </section>
+
+        {{/* TODO: Create content/history.md before treating the history link as complete. */}}
+        <section>
+            <h2>Our history</h2>
+            <p>The community has worshipped in Edinburgh since 1948, when Archpriest John Sotnikov, a Russian Chaplain of the Polish Army, began holding services here.</p>
+            <p><a href="{{ "/history/" | relURL }}">Find out more about our history</a>.</p>
+        </section>
+    </div>
+{{ end }}
