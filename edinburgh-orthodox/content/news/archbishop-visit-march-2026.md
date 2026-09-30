@@ -1,4 +1,14 @@
-# A pastoral visit from Archbishop Nikitas
++++
+title = "A pastoral visit from Archbishop Nikitas"
+date = 2026-03-22
+description = "Archbishop Nikitas of Thyateira and Great Britain visited the Orthodox communities in Scotland from 20 to 22 March 2026."
+draft = true
+# TODO: Add photographs from the Archdiocese gallery
+# (https://www.thyateira.org.uk/news/events/pastoral-visit-of-archbishop-nikitas-to-scotland/)
+# and from Orthodox Times
+# (https://orthodoxtimes.com/pastoral-visit-of-archbishop-of-thyateira-to-scotland/),
+# then set draft = false.
++++
 
 From Friday 20 to Sunday 22 March 2026, His Eminence Archbishop Nikitas of Thyateira and Great Britain visited the Orthodox communities in Scotland. The visit began in Glasgow on the Friday evening, where the Archbishop presided at the Salutations to the Most Holy Theotokos at St Luke's Cathedral, together with Archimandrite Mark Mitchell. Bishop Raphael joined in prayer from the altar.
 
@@ -9,5 +19,3 @@ On Sunday, the Fourth Sunday of the Fast and the Sunday of St John Climacus, the
 At the end of the Liturgy, a Doxology was offered for the Feast of the Annunciation and for Greek Independence Day. Mrs Melpomeni Papaioannou Plevri, the Honorary Consul of Greece in Edinburgh, gave the address for the day.
 
 The Archbishop then joined the community for a meal at Craigmillar Park Church Hall, where he had time to talk with parishioners and share in the life of the community. That evening he presided at the Vespers of Compunction at Chapel Street.
-
-[Images to add: photographs from the Archdiocese of Thyateira gallery at https://www.thyateira.org.uk/news/events/pastoral-visit-of-archbishop-nikitas-to-scotland/ and from the Orthodox Times article at https://orthodoxtimes.com/pastoral-visit-of-archbishop-of-thyateira-to-scotland/.]

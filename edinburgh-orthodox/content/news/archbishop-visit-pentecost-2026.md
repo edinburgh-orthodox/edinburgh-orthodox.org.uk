@@ -1,4 +1,10 @@
-# Pentecost with Archbishop Nikitas
++++
+title = "Pentecost with Archbishop Nikitas"
+date = 2026-05-31
+description = "Archbishop Nikitas celebrated Pentecost with the community at Chapel Street on 31 May 2026."
+draft = true
+# TODO: Add photographs from the day, then set draft = false.
++++
 
 On Sunday 31 May 2026, the Great Feast of Pentecost, His Eminence Archbishop Nikitas of Thyateira and Great Britain visited our community. He presided at Matins and the Divine Liturgy at Chapel Street, and led the Festal Vespers of the Holy Spirit that followed.
 
@@ -9,6 +15,3 @@ After the services, the community gathered for a fellowship lunch at Craigmillar
 He spoke about the number of people received into the Church in Edinburgh this year, and he encouraged the use of English in the services.
 
 When he had finished, he invited questions from those there. One person asked which book of the Bible he liked best, and he named Tobit among his favourites in the Old Testament. Another asked about artificial intelligence, and he said that it can be used in moral ways. A third asked about Orthodoxy online, and he spoke negatively about it, saying that it is disjointed from the real spirit of Orthodoxy, which is handed on through grace-filled elders.
-
-
-[Images to add: photographs from the day.]
