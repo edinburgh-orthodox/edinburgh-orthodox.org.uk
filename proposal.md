@@ -1,15 +1,19 @@
 # Website Redesign Proposal
 
 Working document of all proposed changes to https://edinburgh-orthodox.org.uk. This is the
-plan we refined together, and it feeds into the spec and the tickets. The site is
-WordPress.com and is edited in the WordPress admin by someone who does not need to be
-technical. This folder is where the plan and the tickets live.
+plan we refined together, and it feeds into the spec and the tickets. This folder is where
+the plan and the tickets live.
+
+The plan was written when the site ran on WordPress.com. We have since built the site as a
+static Hugo site in `edinburgh-orthodox/`, so the parts below that describe working inside
+the WordPress admin no longer apply. The needs and the decisions still stand. The move is
+recorded in `docs/adr/0002-hugo-static-site.md`.
 
 ## Decisions We Are Starting From
 
 | # | Decision | Yes |
 |---|----------|-----|
-| 1 | Redesign the site we already have, in WordPress.com. Not a move to a new platform | ✓ |
+| 1 | Redesign the site we already have | ✓, but not in WordPress.com: the site is built in Hugo (ADR-0002) |
 | 2 | Pictures of how it should look are plain HTML and CSS, no special tooling | ✓ |
 | 3 | The calendar lives in Google Calendar and is shown on the site | ✓ (recorded in ADR-0001) |
 | 4 | Fasting notes are filled in from a yearly calendar file, then checked by the editor | ✓ |
@@ -101,7 +105,7 @@ We do this in stages:
 3. Automatic posting to Facebook and WhatsApp comes later, once the copy button is being
    used and it is worth the extra setup.
 
-## 6. The website today (checked September 2026)
+## 6. The WordPress site we are replacing (checked September 2026)
 
 - The donate link is a single Square link today.
 - The churches page lists 33 Chapel Street and 2 Meadow Lane. Craigmillar Park is not listed
@@ -117,11 +121,10 @@ We do this in stages:
 ## 7. Pictures of how it should look
 
 Simple HTML and CSS files, openable by double-click, kept in the `mockups/` folder as a
-visual guide. They are also live on GitHub Pages and cover every page: the homepage, a
-card-style variant, Our Churches, Wishlist, FAQ, Donations (with the bookstore honesty-box),
-Clergy, and News. They are not the real website and are not uploaded anywhere. The real work
-is done in the WordPress admin. A summary of every styling change, compared to the live
-site, is in `mockup-changes.md`.
+visual guide. They cover every page: the homepage, a card-style variant, Our Churches,
+Wishlist, FAQ, Donations (with the bookstore honesty-box), Clergy, and News. They are the
+design the site was built from, and the styling now lives in `edinburgh-orthodox/assets/css/`.
+A summary of every styling change, compared to the old site, is in `mockup-changes.md`.
 
 ## 8. The fasting symbol (still to decide)
 

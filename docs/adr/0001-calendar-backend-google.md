@@ -14,4 +14,9 @@ so a fully custom calendar design (for example custom fasting-symbol styling) is
 possible. It would also be costly to change our minds later, once volunteers are used to
 editing Google, because moving a calendar off a plugin is painful.
 
-Status: accepted.
+Status: accepted, and revisited. The site is now a Hugo build (ADR-0002), so the trade-off
+against a WordPress calendar plugin no longer applies, and a fully custom calendar design is
+possible after all. What still stands is the reason: the volunteers edit the schedule in
+Google, not inside the website. The homepage does not read Google Calendar yet; it renders
+`edinburgh-orthodox/data/services.yaml`, and the generated week is typed in by hand. Issue #1
+covers wiring it up or replacing it.
