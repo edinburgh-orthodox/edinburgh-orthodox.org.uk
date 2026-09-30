@@ -1,5 +1,11 @@
 # Website Redesign: What We Want To Do
 
+> **Where this stands (September 2026).** This spec was written for the WordPress site. The
+> redesign is now built as a static Hugo site in `edinburgh-orthodox/`, and a merge into
+> `main` publishes it. Where the text below says a change is made "in the WordPress admin",
+> read that as a change to the files in this repository. The needs and the decisions are
+> otherwise unchanged. See `docs/adr/0002-hugo-static-site.md`.
+
 ## The Problem
 
 Right now the website (https://edinburgh-orthodox.org.uk) shows the wrong things first.
@@ -15,8 +21,10 @@ to WhatsApp, Facebook, and email.
 
 ## What We Want
 
-Redesign the website we already have. We are not moving platforms and not writing new code.
-Everything is changed in the WordPress admin, by someone who does not need to be technical.
+Redesign the website we already have. The site is built, as a static Hugo site in this
+repository. The pages are Markdown files, the weekly services and the announcements are short
+lists in `data/`, and the styling is in `assets/css/`. Changing the site means editing those
+files, and anyone can preview a change on their own machine before it goes live.
 
 The homepage becomes live and useful, in this order from top to bottom:
 
@@ -74,9 +82,15 @@ This is the full list of what different people need the website to do.
 
 Here are the decisions already agreed, in plain terms.
 
-- **We stay where we are.** We redesign the existing WordPress.com site. We are not moving to a new platform and not writing new code. Everything is done in the WordPress admin and in the Google Calendar and Square dashboards.
+- **We stay where we are, and the site is ours.** The redesign keeps the same site, the same
+  address, and the same content. It is built as a static Hugo site in this repository instead
+  of being edited inside the WordPress admin, so the WordPress.com subscription can stop
+  (ADR-0002). The people who update the week edit a short list of services and the
+  announcements text, and the site rebuilds itself when the change is merged.
 
-- **The calendar lives in Google Calendar.** It is shown on the homepage. Volunteers edit it in Google. They do not need WordPress access.
+- **The calendar lives in Google Calendar.** It is shown on the homepage. Volunteers edit it
+  in Google. They do not need any WordPress or website account. The homepage does not read it
+  yet: the week is currently typed into `edinburgh-orthodox/data/services.yaml` (issue #1).
 
 - **One shared "week" is the heart of it.** The weekly pattern, the special changes for a week, and the announcements block are all part of one thing, and everything else (the calendar, the copy button, the fasting notes) uses that same week. The details:
   - The normal week is: Weekday Matins at 7.30am; Weekend Matins at 8.30am followed by Divine Liturgy at 10.00am; Vespers at 6.30pm every day; Supplicatory Canon on Monday at 7.00pm (after Vespers, to the Mother of God); Fr Luke's Catechesis on Sunday at 4.00pm.
@@ -105,13 +119,14 @@ Here are the decisions already agreed, in plain terms.
 
 ## Visual mockup
 
-A working mockup of every redesigned page is live on GitHub Pages:
+The design was worked out as a mockup of every page, and it is now built:
 
-**https://edinburgh-orthodox.github.io/edinburgh-orthodox.org.uk/mockups/**
+**https://edinburgh-orthodox.github.io/edinburgh-orthodox.org.uk/**
 
-It is plain HTML and CSS, so anyone can open it in a browser to see the layout. It is a
-visual reference, not the real website and not uploaded anywhere. A page-by-page summary of
-the styling changes also lives in `mockup-changes.md`; the main points are below.
+The mockup files are plain HTML and CSS in `mockups/`, so anyone can open them in a browser to
+see the layout the site was built from. The styling itself now lives in
+`edinburgh-orthodox/assets/css/`. A page-by-page summary of the styling changes also lives in
+`mockup-changes.md`; the main points are below.
 
 ### The pages
 
@@ -164,7 +179,9 @@ Announcements becomes a title with a card per announcement.
 
 ## How We Will Check It Is Done
 
-There are no automatic tests, because this website has no code of its own. Every change is made by hand in the WordPress admin and the other dashboards, so each change is checked by a person, by hand, against the live website.
+Every change is checked by a person, by hand, against the live website. The build itself is
+checked automatically: the workflow in `.github/workflows/hugo.yml` builds the site on every
+pull request, so a broken template or a bad data file cannot be merged.
 
 For each item in the list of needs above, the check is: can a normal visitor actually do the thing it describes, by looking at the live site, without any special access.
 
@@ -180,10 +197,13 @@ These things are deliberately not part of this project:
 - Deciding the final symbol for each fasting level. Only "cross on red" for strict fast is fixed for now.
 - Writing the FAQ questions and answers. We set up the page structure now.
 - The final wishlist items and their prices. Those go in a separate list.
-- Moving the website to a new platform or rebuilding it as a static site.
+- Editing through the WordPress admin. The WordPress.com site is retired once the domain
+  moves; see ADR-0002 and issue #32.
 
 ## Extra Notes
 
 - The current hand-made format for the weekly post is kept as our guide for what the copy button should produce. The two examples are in the `examples/` folder: `example-cal-post.md` (the calendar plus announcements) and `example-text-post.md` (announcements on their own).
-- Editing is shared: Google Calendar is where the schedule is changed, and WordPress just shows it. The editors are not website admins.
+- Editing is shared: the week is kept as a short list of services and the announcements text
+  in `edinburgh-orthodox/data/`, and the site shows whatever those files say. The editors are
+  not website admins, and they do not need a WordPress login.
 - The donate link today is a single Square link. The wishlist improves this to one checkout for several items.

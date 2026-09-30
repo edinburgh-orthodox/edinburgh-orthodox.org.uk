@@ -2,8 +2,10 @@
 
 The public website (and the folder of plans and tickets) for the Orthodox Community of
 St Andrew, Edinburgh, in the Archdiocese of Thyateira and Great Britain, charity SC054378.
-This folder holds the plans, the tickets, and the agreed wording. The live site runs on
-WordPress.com and is edited in the WordPress admin.
+This folder holds the plans, the tickets, and the agreed wording. The website itself is a
+static Hugo site in `edinburgh-orthodox/`, published to GitHub Pages and to
+edinburgh-orthodox.org.uk when a change is merged into `main`. The old WordPress.com site is
+being retired (issues #9 and #32).
 
 ## Language
 
@@ -101,7 +103,8 @@ _Avoid_: "campaign", "fund", "goal"
 
 ## External integrations
 
-- **Google Calendar** is where the calendar lives. It is shown on the site, and the
-  volunteers edit it in Google, not in WordPress.
+- **Google Calendar** is where the calendar is meant to live, edited by the volunteers in
+  Google. The homepage does not read it yet; the week is typed into
+  `edinburgh-orthodox/data/services.yaml` (see issue #1).
 - **Mailchimp** sends the email newsletter and the contact form.
 - **Square** takes donations and wishlist payments.
