@@ -1,0 +1,23 @@
+{{/* Renders the Our Churches page from the shared records in data/churches.yaml. */}}
+{{ define "main" }}
+    <div class="wrap">
+        <section class="page-section">
+            <h1>{{ .Title }}</h1>
+            <p class="page-intro">{{ .Description }}</p>
+
+            <div class="page-col">
+                {{ range hugo.Data.churches }}
+                    <article class="church-block">
+                        <h2>{{ .name }}</h2>
+                        <p class="muted">{{ .address }}</p>
+                        <p>{{ .description }}</p>
+                        <p>
+                            {{ with .websiteURL }}<a href="{{ . }}" target="_blank" rel="noopener">Visit the school website</a> · {{ end }}
+                            <a href="{{ .mapURL }}" target="_blank" rel="noopener">Open in Google Maps</a>
+                        </p>
+                    </article>
+                {{ end }}
+            </div>
+        </section>
+    </div>
+{{ end }}
